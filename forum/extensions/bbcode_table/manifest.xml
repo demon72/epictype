@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE extension SYSTEM "ext-1.0.dtd">
+
+<!--
+/**
+ *BBCODE html table
+ *Author - Abir (http://studyforums.org)
+ */
+-->
+
+<extension engine="1.0">
+    <id>bbcode_table</id>
+    <title>BBCODE (html table)</title>
+    <version>0.1.0</version>
+    <description>BBCODE to insert table in post</description>
+    <author>Psychecroatan(Abir) - http://studyforums.org</author>
+    <minversion>1.4.1</minversion>
+    <maxtestedon>1.4.2</maxtestedon>
+
+     <hooks>
+        <hook id="ps_start"><![CDATA[
+
+// tag handling function
+function handle_table_tag($inputText) {
+    return '<table>'.$inputText.'</table>';
+}
+
+function handle_tr_tag($inputText) {
+    return '<tr>'.$inputText.'</tr>';
+}
+function handle_th_tag($inputText) {
+    return '<th><h1>'.$inputText.'</h1></th>';
+}
+function handle_td_tag($inputText) {
+    return '<td>'.$inputText.'</td>';
+}
+        ]]></hook>
+
+        <hook id="ps_preparse_tags_start"><![CDATA[
+
+// add our tag to the list
+$tags[0] = 'table';
+$tags_opened[0] = 'table';
+$tags_closed[0] = 'table';
+$tags_inline[0] = 'table';
+$tags_trim[0] = 'table';
+
+$tags[1] = 'tr';
+$tags_opened[1] = 'tr';
+$tags_closed[1] = 'tr';
+$tags_inline[1] = 'tr';
+$tags_trim[1] = 'tr';
+
+$tags[2] = 'tr';
+$tags_opened[2] = 'th';
+$tags_closed[2] = 'th';
+$tags_inline[2] = 'th';
+$tags_trim[2] = 'th';
+
+$tags[3] = 'td';
+$tags_opened[3] = 'td';
+$tags_closed[3] = 'td';
+$tags_inline[3] = 'td';
+$tags_trim[3] = 'td';
+
+        ]]></hook>
+        <hook id="ps_do_bbcode_replace"><![CDATA[
+
+
+$pattern[] = '#\[table\](.*?)\[/table\]#se';
+$replace[] = 'handle_table_tag(\'$1\')';
+
+$pattern[] = '#\[tr\](.*?)\[/tr\]#se';
+$replace[] = 'handle_tr_tag(\'$1\')';
+
+$pattern[] = '#\[th\](.*?)\[/th\]#se';
+$replace[] = 'handle_th_tag(\'$1\')';
+
+$pattern[] = '#\[td\](.*?)\[/td\]#se';
+$replace[] = 'handle_td_tag(\'$1\')';
+
+        ]]></hook>
+<hook id="pun_bbcode_pre_buttons_output">
+<![CDATA[
+			$this->add_button(array('name'	=> 'table', 'weight' => 60, 'image' => false));
+$this->add_button(array('name'	=> 'tr', 'weight' => 60, 'image' => false));
+$this->add_button(array('name'	=> 'th', 'weight' => 60, 'image' => false));
+$this->add_button(array('name'	=> 'td', 'weight' => 60, 'image' => false));
+		]]></hook>
+
+    </hooks>
+</extension>

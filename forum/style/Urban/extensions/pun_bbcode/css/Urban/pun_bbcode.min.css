@@ -1,0 +1,137 @@
+/* Styles for pun_bbcode extension */
+
+#pun_bbcode_bar {
+	margin: .45em 0 -.1em 1em;
+	position: relative;
+}
+
+.oldie #pun_bbcode_bar {
+	margin: .45em 0 -.45em 1em;
+}
+
+#pun_bbcode_bar input[type="button"] {
+	background: #f1f1f1; /* Show a solid color for older browsers */
+	background: -moz-linear-gradient(#f8f8f8, #f1f1f1);
+	background: -o-linear-gradient(#f8f8f8, #f1f1f1);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#f1f1f1)); /* older webkit syntax */
+	background: -webkit-linear-gradient(#f8f8f8, #f1f1f1);
+	padding: 5px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border:1px solid #dcdcdc;
+	color: #6e6e6e;
+	text-decoration: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 20px;
+	margin:1px;
+	-webkit-transition-duration: 200ms;
+	-webkit-transition-property: border, color;
+	-webkit-transition-timing-function: ease;
+}
+
+#pun_bbcode_bar input[type="button"]:active {
+	position: relative;
+	top: 1px;
+}
+
+#pun_bbcode_bar input[type="button"]:hover
+#pun_bbcode_bar input[type="button"]:focus {
+	border: solid 1px #84BCE4;
+}
+
+#pun_bbcode_bar input.image {
+	width: 26px;
+	height: 26px;
+	border-color: #eee;
+}
+
+#pun_bbcode_bar input[type="button"]:hover {
+	border-color: #84BCE4;
+}
+
+#pun_bbcode_bar input[type="button"]:first-child {
+	margin-left: 0;
+}
+
+#pun_bbcode_bar input.group_start {
+	margin-left: 2px;
+}
+
+#pun_bbcode_button_b {
+	font-weight: bold;
+}
+
+#pun_bbcode_button_i {
+	font-style: italic;
+}
+
+#pun_bbcode_button_u {
+	text-decoration: underline;
+}
+
+#pun_bbcode_bar #pun_bbcode_wrapper {
+	width: 95%;
+	position: relative;
+}
+
+
+#pun_bbcode_bar input[name="b"].image,
+#pun_bbcode_bar input[name="i"].image,
+#pun_bbcode_bar input[name="u"].image,
+#pun_bbcode_bar input[name="list"].image,
+#pun_bbcode_bar input[name="list item"].image,
+#pun_bbcode_bar input[name="color"].image,
+#pun_bbcode_bar input[name="code"].image,
+#pun_bbcode_bar input[name="quote"].image,
+#pun_bbcode_bar input[name="img"].image,
+#pun_bbcode_bar input[name="url"].image,
+#pun_bbcode_bar input[name="email"].image {
+	background: url(img/sprite.png) 0 0 no-repeat;
+}
+
+
+#pun_bbcode_bar input[name="i"].image {
+	background-position: -132px 0;
+}
+
+#pun_bbcode_bar input[name="b"].image {
+	background-position: 0 0;
+}
+
+#pun_bbcode_bar input[name="u"].image {
+	background-position: -261px 0;
+}
+
+#pun_bbcode_bar input[name="list"].image {
+	background-position: -183px 0;
+}
+
+#pun_bbcode_bar input[name="list item"].image {
+	background-position: -157px 0;
+}
+
+#pun_bbcode_bar input[name="color"].image {
+	background-position: -53px 0;
+}
+
+#pun_bbcode_bar input[name="code"].image {
+	background-position: -27px 0;
+}
+
+#pun_bbcode_bar input[name="quote"].image {
+	background-position: -209px 0;
+}
+
+#pun_bbcode_bar input[name="img"].image {
+	background-position: -105px 0;
+}
+
+#pun_bbcode_bar input[name="url"].image {
+	background-position: -286px 0;
+}
+
+#pun_bbcode_bar input[name="email"].image {
+	background-position: -79px 0;
+}
